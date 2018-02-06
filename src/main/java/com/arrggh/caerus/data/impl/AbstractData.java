@@ -24,7 +24,5 @@ public abstract class AbstractData<T extends IEntity<?>> {
     protected void writeFile(T data) throws IOException {
         File output = new File(directory, data.getId() + ".json");
         mapper.writeValue(output, data);
-        System.out.println(output);
-        System.out.println(mapper.writeValueAsString(data));
     }
 }

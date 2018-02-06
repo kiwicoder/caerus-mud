@@ -29,7 +29,6 @@ public class RoomDataTest {
         FileWriter writer = new FileWriter(file);
         IOUtils.write(EXAMPLE_ROOM, writer);
         writer.close();
-        System.out.println("Filled File: " + file);
         data = new RoomData(configuration);
     }
 
