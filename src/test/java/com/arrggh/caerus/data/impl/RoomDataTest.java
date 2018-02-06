@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class RoomDataTest {
     private static final String EXAMPLE_ROOM = "{\"id\":{\"id\":0},\"name\":\"Test Room\"}";
-
     private static final Room.Id ROOM_ID = new Room.Id(0);
 
     @Rule
