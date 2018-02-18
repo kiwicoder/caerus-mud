@@ -1,5 +1,5 @@
 package com.arrggh.caerus.model;
 
-public interface IEntity<T> {
-    T getId();
+public interface IEntity {
+    long getId();
 }

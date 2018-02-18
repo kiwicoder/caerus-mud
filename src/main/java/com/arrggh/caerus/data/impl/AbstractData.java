@@ -6,23 +6,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-public abstract class AbstractData<T extends IEntity<?>> {
+public abstract class AbstractData<INTERFACE extends IEntity, DATA extends INTERFACE> {
     private final ObjectMapper mapper = new ObjectMapper();
     private final File directory;
 
-    abstract Class<T> getDataClass();
+    protected abstract Class<DATA> getDataClass();
 
     protected AbstractData(File directory) {
         this.directory = directory;
     }
 
-    protected T readFile(String id) throws IOException {
-        File input = new File(directory, id + ".json");
+    protected DATA readFile(long id) throws IOException {
+        File input = new File(directory, String.format("%d.json", id));
         return mapper.readValue(input, getDataClass());
     }
 
-    protected void writeFile(T data) throws IOException {
-        File output = new File(directory, data.getId() + ".json");
+    protected void writeFile(INTERFACE data) throws IOException {
+        File output = new File(directory, String.format("%d.json", data.getId()));
         mapper.writeValue(output, data);
     }
 }

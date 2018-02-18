@@ -1,11 +1,11 @@
-package com.arrggh.caerus.model.impl;
+package com.arrggh.caerus.model.impl.map;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Test;
 
-public class RoomTest {
+public class PathTest {
     @Test
     public void testEquality() {
-        EqualsVerifier.forClass(Room.class).verify();
+        EqualsVerifier.forClass(Path.class).verify();
     }
 }
